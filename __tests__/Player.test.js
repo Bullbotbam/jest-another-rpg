@@ -52,3 +52,10 @@ test("subtracts player's health", () => {
   player.reduceHealth(99999);
   expect(player.health).toBe(0);
 });
+test("gets player's attack value", () => {
+  const player = new Player("Donald");
+  player.strength = 10;
+
+  expect(player.getAttackValue()).toBeGreaterThanOrEqual(5);
+  expect(player.getAttackValue()).toBeLessThanOrEqual(15);
+});
